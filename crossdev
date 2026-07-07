@@ -1924,9 +1924,7 @@ if ! ex_fast ; then
 		if ! ${CC} -target ${CTARGET} -mcpu=help &> /dev/null; then
 			case $? in
 				1) die "Target architecture not supported by installed LLVM toolchain" ;;
-				*) eerror "LLVM is not installed"
-				   exit 1
-				;;
+				*) die "LLVM is not installed" ;;
 			esac
 		fi
 
